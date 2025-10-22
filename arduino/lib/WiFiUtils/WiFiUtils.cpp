@@ -27,7 +27,7 @@ WiFiUtils::~WiFiUtils()
     Serial.print("Could not disconnect from network!!");
 }
 
-void WiFiUtils::connect_to_wifi(char ssid[], char password[])
+bool WiFiUtils::connect_to_wifi(char ssid[], char password[])
 {
     Serial.print("Attempting to connect to: ");
     Serial.println(ssid);
@@ -35,7 +35,8 @@ void WiFiUtils::connect_to_wifi(char ssid[], char password[])
     if (connection_status == 3)
     {
         Serial.print("Successfully connected to WiFi.");
-        return;
+        return true;
     }
     Serial.print("Connection to WiFi failed.");
+    return false;
 }

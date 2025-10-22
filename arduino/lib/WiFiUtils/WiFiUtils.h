@@ -23,5 +23,5 @@ public:
    * @param ssid Full name of WiFi network to connect to 
    * @param password Password for connecting to WiFi network
    */
-  void connect_to_wifi(char ssid[], char password[]);
+  bool connect_to_wifi(char ssid[], char password[]);
 };
