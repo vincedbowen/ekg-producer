@@ -41,7 +41,7 @@
 *.dwo
 
 .vscode/
+.pio/
 
 /build
-/data/ptb-diagnostic-ecg-database-1.0.0
 
