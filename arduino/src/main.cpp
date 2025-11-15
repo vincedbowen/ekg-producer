@@ -4,7 +4,6 @@
 #include <LedBitmap.h>
 #include <StreamClient.h>
 
-#include <Arduino.h>
 #include "Arduino_LED_Matrix.h"
 
 void setup()
@@ -13,14 +12,14 @@ void setup()
   led.display_bitmap(&LedBitmap::build_hi);
 
   Serial.begin(9600);
-  pinMode(10, INPUT); 
-  pinMode(11, INPUT);
   WiFiUtils wifi;
   bool wifi_status = wifi.connect_to_wifi(getenv("SSID"), getenv("PASSWORD"));
-  if(wifi_status) {
+  if (wifi_status)
+  {
     led.display_bitmap(&LedBitmap::set_wifi_success, 5000);
   }
-  else {
+  else
+  {
     led.display_bitmap(&LedBitmap::set_wifi_fail, false);
     exit(1);
   }
